@@ -34,9 +34,42 @@
       100% {transform: translateY(-100vh); opacity: 0;}
     }
   </style>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    animation: fondo 10s infinite alternate;
+  }
+
+  @keyframes fondo {
+    0% { background: #ffe6f0; }
+    50% { background: #f0f8ff; }
+    100% { background: #fff0f5; }
+  }
+
+  .frase {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    animation: flotar 6s ease-in-out infinite;
+    opacity: 0.8;
+    color: #ff69b4;
+  }
+
+  @keyframes flotar {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+  }
+</style>
+
 </head>
 <body>
   <h1>💌 Te amo mucho 💌</h1>
+<div id="contenedor"></div>
 
   <script>
     const frases = [
@@ -60,3 +93,4 @@
   </script>
 </body>
 </html>
+
