@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>💖 Te Amo 💖</title>
   <style>
     body {
@@ -11,27 +12,32 @@
       font-family: 'Segoe Script', cursive;
       overflow: hidden;
       text-align: center;
+      position: relative;
+      height: 100vh;
     }
 
     h1 {
-      margin-top: 50px;
-      font-size: 48px;
+      margin-top: 8vh;
+      font-size: 3rem;
       color: #ff3399;
       text-shadow: 2px 2px #fff;
+      padding: 0 10px;
     }
 
     .mensaje {
       position: absolute;
-      font-size: 24px;
+      font-size: clamp(1rem, 2vw, 1.5rem); /* Escala según pantalla */
       color: #ff66cc;
-      animation: flotar 6s ease-in-out infinite;
-      opacity: 0.8;
+      animation: flotar 8s ease-in-out infinite;
+      opacity: 0.85;
+      white-space: nowrap;
+      text-shadow: 1px 1px 2px #fff;
     }
 
     @keyframes flotar {
-      0% {transform: translateY(100vh); opacity: 0;}
-      50% {opacity: 1;}
-      100% {transform: translateY(-100vh); opacity: 0;}
+      0% { transform: translateY(100vh); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
     }
   </style>
 </head>
@@ -41,25 +47,29 @@
   <script>
     const frases = [
       "Eres hermosa 🌸",
-      "Tu y Yo 💖",
-      "Eres increible de verdad ✨",
-      "la chica mas bonita de todo el planeta 💭",
-      "Sigo pensandote de noche pero tu no estas 🌹",
-      "Tus ojos son mi luz en dias flojos"
+      "Tú y Yo 💖",
+      "Eres increíble de verdad ✨",
+      "La chica más bonita de todo el planeta 💭",
+      "Sigo pensándote de noche pero tú no estás 🌹",
+      "Tus ojos son mi luz en días flojos 🌼"
     ];
 
-    for (let i = 0; i < 30; i++) {
-      let msg = document.createElement("div");
+    const cantidad = window.innerWidth < 768 ? 20 : 30; // Menos en móvil
+
+    for (let i = 0; i < cantidad; i++) {
+      const msg = document.createElement("div");
       msg.className = "mensaje";
       msg.innerText = frases[Math.floor(Math.random() * frases.length)];
-      msg.style.left = Math.random() * window.innerWidth + "px";
-      msg.style.top = Math.random() * window.innerHeight + "px";
+      msg.style.left = Math.random() * 90 + "vw";
+      msg.style.top = Math.random() * 80 + "vh";
       msg.style.animationDelay = (Math.random() * 5) + "s";
       document.body.appendChild(msg);
     }
   </script>
 </body>
 </html>
+
+
 
 
 
