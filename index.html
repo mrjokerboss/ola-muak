@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💖 Te Amo 💖</title>
+  <title>💖My girl💖</title>
   <style>
     body {
       margin: 0;
@@ -21,17 +21,17 @@
       font-size: 3rem;
       color: #ff3399;
       text-shadow: 2px 2px #fff;
-      padding: 0 10px;
     }
 
     .mensaje {
       position: absolute;
-      font-size: clamp(1rem, 2vw, 1.5rem); /* Escala según pantalla */
+      font-size: clamp(1rem, 2.5vw, 1.8rem); /* Escala según pantalla */
       color: #ff66cc;
-      animation: flotar 8s ease-in-out infinite;
-      opacity: 0.85;
+      animation: flotar 10s ease-in-out infinite;
+      opacity: 0.9;
       white-space: nowrap;
       text-shadow: 1px 1px 2px #fff;
+      padding: 0 10px;
     }
 
     @keyframes flotar {
@@ -46,28 +46,29 @@
 
   <script>
     const frases = [
-      "Eres hermosa 🌸",
-      "Tú y Yo 💖",
       "Eres increíble de verdad ✨",
-      "La chica más bonita de todo el planeta 💭",
+      "Eres hermosa 🌸",
       "Sigo pensándote de noche pero tú no estás 🌹",
-      "Tus ojos son mi luz en días flojos 🌼"
+      "Tú y Yo ❤️",
+      "Tus ojos son mi luz en días flojos 🌼",
+      "La chica más bonita de todo el planeta 💭"
     ];
 
-    const cantidad = window.innerWidth < 768 ? 20 : 30; // Menos en móvil
+    const cantidad = window.innerWidth < 768 ? 15 : 25;
 
     for (let i = 0; i < cantidad; i++) {
       const msg = document.createElement("div");
       msg.className = "mensaje";
       msg.innerText = frases[Math.floor(Math.random() * frases.length)];
-      msg.style.left = Math.random() * 90 + "vw";
-      msg.style.top = Math.random() * 80 + "vh";
+      msg.style.left = Math.random() * 85 + "vw";
+      msg.style.top = Math.random() * 75 + "vh";
       msg.style.animationDelay = (Math.random() * 5) + "s";
       document.body.appendChild(msg);
     }
   </script>
 </body>
 </html>
+
 
 
 
