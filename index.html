@@ -60,11 +60,28 @@
   }
 
   @keyframes flotar {
-    0% { transform: translateY(100vh); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(-100vh); opacity: 0; }
+  0% { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-50vh); opacity: 0; }
+}
+
   }
-</style>
+</style @media screen and (max-width: 600px) {
+  .frase {
+    font-size: 18px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 24px;
+    padding: 10px;
+  }
+}
+>
 
 </head>
   <head>
@@ -98,5 +115,6 @@
   </script>
 </body>
 </html>
+
 
 
